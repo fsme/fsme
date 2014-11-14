@@ -1,0 +1,45 @@
+Here We Go: HWG
+Stack Pointer = (F7FE - FFFE) = 2KB
+	юниты начинаются с конца, до F7FE
+Start:
+	0106 - Non-masked Interrupt
+	010C - CLI, Interrupt
+	010D - Events proc
+/bot/boss - менеджер ботов
+	Top manager
+	BP = 120
+	120-12F Events
+		ASCII for control
+		UTF8 for data
+	130-32F State
+/dev/tic
+	Timecounter
+	INT 1C [0000:0070] = Bossbot
+			сохранить вернуть при выходе
+-----------
+/dev/con
+	System console (only output)
+	BP = 330
+	330-33F Events
+	340-53F State
+	UTF-8
+/dev/kbd
+	Input keyboard
+	BP = 540
+	540-54F Events
+	550-74F State
+	INT 9 = 0E6F:08D2
+
+/dev/mem
+	Memory manager
+-------------------
+/bot/asm
+	Replicator-assembler, bot Maker, bot Builder
+	на вход - fsme filesystem
+	на выходе - создание ботов по описанию
+/bot/fsme
+	Shell,
+	отражение состояния и хранение инфы о ботах на файловой системе 
+/bot/dis
+	Disassembler-debuger
+

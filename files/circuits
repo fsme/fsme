@@ -1,0 +1,16 @@
+Tiny Tic - tickscounter
+	
+-----------
+; 
+F7C6 - адрес INT 1C
+F7C8 - сегмент INT 1C
+; Timer interrupt ------------------
+Tick - got INT 1C, put Bossbot to here
+F7CA - F7F9
+.....
+; std interrupt terminator --------------
+F7F8	FB	STI	; std 
+F7F9	CF	IRET
+; LazyTerminator - stop processor -----------
+F7FA	F4	HLT
+F7FB	B90F09	JMP 10D
