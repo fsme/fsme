@@ -1,16 +1,13 @@
-Tiny Tic - tickscounter
-	
------------
-; 
-F7C6 - адрес INT 1C
-F7C8 - сегмент INT 1C
-; Timer interrupt ------------------
-Tick - got INT 1C, put Bossbot to here
-F7CA - F7F9
-.....
-; std interrupt terminator --------------
-F7F8	FB	STI	; std 
-F7F9	CF	IRET
-; LazyTerminator - stop processor -----------
-F7FA	F4	HLT
-F7FB	B90F09	JMP 10D
+; Memory map of fsme8086.com 
+;-----------
+
+FC00 - FFFF - interrupt vector backup
+FBFE - Stack Pointer
+
+0100-011F	The Bender Unit: std input stream
+
+0750-0753	terminator by default: stop processor 
+0754-076F	backup table of interrupt
+0770-0774	std output circuits
+0775-0779	load address of INT1B vector
+077A-0000	keyboard interrupt handler

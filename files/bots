@@ -1,12 +1,13 @@
 Here We Go: HWG
-Stack Pointer = (F7FE - FFFE) = 2KB
-	юниты начинаются с конца, до F7FE
+Stack Pointer = (FDFE - FFFF) = 200h bytes
+	FDDD - FDF7 = backup interrupt vect
+	0100 - Circuits
 Start:
 	0106 - Non-masked Interrupt
 	010C - CLI, Interrupt
 	010D - Events proc
-/bot/boss - менеджер ботов
-	Top manager
+/bot/boss
+	Top bot's manager
 	BP = 120
 	120-12F Events
 		ASCII for control
@@ -15,7 +16,6 @@ Start:
 /dev/tic
 	Timecounter
 	INT 1C [0000:0070] = Bossbot
-			сохранить вернуть при выходе
 -----------
 /dev/con
 	System console (only output)
@@ -35,11 +35,10 @@ Start:
 -------------------
 /bot/asm
 	Replicator-assembler, bot Maker, bot Builder
-	на вход - fsme filesystem
-	на выходе - создание ботов по описанию
+	input fsme filesystem
+	output - Build and start Bots
 /bot/fsme
-	Shell,
-	отражение состояния и хранение инфы о ботах на файловой системе 
+	Shell of the system
 /bot/dis
 	Disassembler-debuger
 
