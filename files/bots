@@ -1,33 +1,41 @@
 Here We Go: HWG
 Stack Pointer = (FDFE - FFFF) = 200h bytes
-	FDDD - FDF7 = backup interrupt vect
 	0100 - Circuits
 Start:
 	0106 - Non-masked Interrupt
 	010C - CLI, Interrupt
 	010D - Events proc
 /bot/boss
-	Top bot's manager
-	BP = 120
-	120-12F Events
+	First execute and manager of bots
+	BP = 130
+	120-12B Reserved
+	12C-12D SI current position
+	12E-12F DI current position
+	130-13F Events
 		ASCII for control
 		UTF8 for data
-	130-32F State
+	140-33F State
 /dev/tic
 	Timecounter
 	INT 1C [0000:0070] = Bossbot
 -----------
 /dev/con
 	System console (only output)
-	BP = 330
-	330-33F Events
-	340-53F State
+	BP = 350
+	340-34B Reserved
+	34C-34D SI current position
+	34E-34F DI current position
+	350-35F Events
+	360-55F State
 	UTF-8
 /dev/kbd
 	Input keyboard
-	BP = 540
-	540-54F Events
-	550-74F State
+	BP = 570
+	560-56B Reserved
+	56C-56D SI current position
+	56E-56F DI current position
+	570-57F Events
+	580-77F State
 	INT 9 = 0E6F:08D2
 
 /dev/mem

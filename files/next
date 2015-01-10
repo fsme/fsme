@@ -1,4 +1,6 @@
 
+-=* DI+SI place to store *=-
+
 kbd init (state flags, init DI, etc)
 flexo
 
