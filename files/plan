@@ -1,11 +1,13 @@
 CURRENT
-Interrupt processing without CLI/STI - change interrupt vector
-Set IRET(empty) unit until end of interrupt processing
+std check valid output address of DI 
+SI:DI current position = offset from BP, 1 byte
+/dev/kbd handler
 
 PLAN
 text reader for saving current point
 
 DREAM
+interrupt processing without CLI/STI: change interrupt vector
 comment from external file
 view lower shift
 

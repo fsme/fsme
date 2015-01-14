@@ -1,6 +1,6 @@
-
 -=* DI+SI place to store *=-
 
+std valid DI output address
 kbd init (state flags, init DI, etc)
 flexo
 

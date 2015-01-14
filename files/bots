@@ -7,10 +7,9 @@ Start:
 	010D - Events proc
 /bot/boss
 	First execute and manager of bots
+	120-12D Reserved
+	12E-12F SI:DI current position offset of BP 
 	BP = 130
-	120-12B Reserved
-	12C-12D SI current position
-	12E-12F DI current position
 	130-13F Events
 		ASCII for control
 		UTF8 for data
@@ -20,24 +19,23 @@ Start:
 	INT 1C [0000:0070] = Bossbot
 -----------
 /dev/con
-	System console (only output)
-	BP = 350
-	340-34B Reserved
-	34C-34D SI current position
-	34E-34F DI current position
+	System console
+	340-34E Reserved
+	34F     SI:DI current offset position (1 byte)
+	BP = 350 (Base Pointer)
 	350-35F Events
 	360-55F State
 	UTF-8
 /dev/kbd
 	Input keyboard
-	BP = 570
-	560-56B Reserved
-	56C-56D SI current position
-	56E-56F DI current position
+	560-56E Reserved
+	56F     SI:DI current offset position (1 byte)
+	BP = 570 (Base Pointer)
 	570-57F Events
 	580-77F State
+	
 	INT 9 = 0E6F:08D2
-
+	INT 16 bios
 /dev/mem
 	Memory manager
 -------------------

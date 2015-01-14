@@ -6,8 +6,9 @@ FBFE - Stack Pointer
 
 0100-011F	The Bender Unit: std input circuit
 
-0750-0753	terminator by default: stop processor 
-0754-076F	backup table of interrupt
-0770-0774	std output circuit
-0775-0779	load address of INT1B vector
-077A-0000	keyboard interrupt handler
+0780-0783	terminator by default: stop processor 
+0784-079F	backup table of interrupt
+07A0-07A4	std output circuit
+07A5-07A9	load handler of INT1B vector
+07AA-07AE	load handler of 
+07B0-0000	keyboard interrupt handler
