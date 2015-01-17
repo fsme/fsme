@@ -1,20 +1,5 @@
--=* DI+SI place to store *=-
+CLONE ASM BUILD DEXLER
 
-std valid DI output address
-kbd init (state flags, init DI, etc)
-flexo
-
-handler: 
-	set vector to IRET
-	set context of handler (BP,SI)
-	goto Bender
-	restore vector
-	IRET
-
-Set INT to IRET - disable interrupt
-Save CONTEXT
-Set BP SI
-Processing.......
-Restore CONTEXT
-Set INT to handler - enable interrupt
-IRET
+/dev/boss
+/dev/kbd
+/dev/con

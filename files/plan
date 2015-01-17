@@ -1,6 +1,9 @@
 CURRENT
-std check valid output address of DI 
-SI:DI current position = offset from BP, 1 byte
+FF events size
+BP+SI+CX at Bossbot (scheduler)
+CX = amount events bytes in buffer
+SI = current position = offset of BP, 2 byte
+LOOP for processing
 /dev/kbd handler
 
 PLAN

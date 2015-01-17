@@ -4,7 +4,7 @@
 FC00 - FFFF - interrupt vector backup
 FBFE - Stack Pointer
 
-0100-011F	The Bender Unit: std input circuit
+0100-011F	The Bending Unit #23: std input events
 
 0780-0783	terminator by default: stop processor 
 0784-079F	backup table of interrupt

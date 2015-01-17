@@ -1,44 +1,28 @@
-Here We Go: HWG
-Stack Pointer = (FDFE - FFFF) = 200h bytes
-	0100 - Circuits
-Start:
-	0106 - Non-masked Interrupt
-	010C - CLI, Interrupt
-	010D - Events proc
+#--------	
 /bot/boss
-	First execute and manager of bots
-	120-12D Reserved
-	12E-12F SI:DI current position offset of BP 
-	BP = 130
-	130-13F Events
-		ASCII for control
-		UTF8 for data
-	140-33F State
+	BP = 200  Manager, Scheduler of proc
+	200-2FF  Events
+	300-4FF  State
+
+	INT 1C [0000:0070] = Bossbot
+/dev/con
+	BP = 500 System Console
+	500-5FF  Events
+	600-7FF  State
+/dev/kbd
+	BP = 800 Keyboard
+	800-8FF  Events
+	900-AFF  State
+
+	INT 16 bios
+/bot/mon
+	; Monitor, Command Interpreter
+/dev/mem
+	; Memory manager
+==============================
 /dev/tic
 	Timecounter
-	INT 1C [0000:0070] = Bossbot
 -----------
-/dev/con
-	System console
-	340-34E Reserved
-	34F     SI:DI current offset position (1 byte)
-	BP = 350 (Base Pointer)
-	350-35F Events
-	360-55F State
-	UTF-8
-/dev/kbd
-	Input keyboard
-	560-56E Reserved
-	56F     SI:DI current offset position (1 byte)
-	BP = 570 (Base Pointer)
-	570-57F Events
-	580-77F State
-	
-	INT 9 = 0E6F:08D2
-	INT 16 bios
-/dev/mem
-	Memory manager
--------------------
 /bot/asm
 	Replicator-assembler, bot Maker, bot Builder
 	input fsme filesystem
