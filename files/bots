@@ -10,17 +10,24 @@
 	500-5FF  Events
 	600-7FF  State
 /dev/kbd
+	; Keyboard Input
+/bot/fry
+	; Command Interpreter
 	BP = 800 Keyboard
 	800-8FF  Events
 	900-AFF  State
 
 	INT 16 bios
-/bot/mon
-	; Monitor, Command Interpreter
+/dev/nic
 /dev/mem
-	; Memory manager
+	; Names and Memory managment
+	BP = B00
+	B00-BFF Events
+	C00-DFF State
+============
+	E00 - Circuits
 ==============================
-/dev/tic
+/dev/tim
 	Timecounter
 -----------
 /bot/asm
