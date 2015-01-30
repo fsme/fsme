@@ -1,9 +1,8 @@
+
 CURRENT
-FF events size
-BP+SI+CX at Bossbot (scheduler)
-CX = amount events bytes in buffer
-SI = current position = offset of BP, 2 byte
-LOOP for processing
+WRITE BP+SI+CX to Bossbot (scheduler) every time output
+SI = current input, offset from BP, 1 byte
+CX = counter Events bytes
 /dev/kbd handler
 
 PLAN
@@ -15,4 +14,6 @@ comment from external file
 view lower shift
 
 DONE
-mask for border buffers
+mask on/off for buffers
+FF events size
+LOOP for processing

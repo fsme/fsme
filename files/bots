@@ -1,31 +1,26 @@
 #--------	
-/bot/boss
+/bot/deus
 	BP = 200  Manager, Scheduler of proc
 	200-2FF  Events
 	300-4FF  State
+	500-5FF	Stack
+	600 - Circuits
 
-	INT 1C [0000:0070] = Bossbot
-/dev/con
-	BP = 500 System Console
-	500-5FF  Events
-	600-7FF  State
-/dev/kbd
-	; Keyboard Input
-/bot/fry
-	; Command Interpreter
-	BP = 800 Keyboard
-	800-8FF  Events
-	900-AFF  State
-
-	INT 16 bios
-/dev/nic
-/dev/mem
-	; Names and Memory managment
-	BP = B00
-	B00-BFF Events
-	C00-DFF State
+	INT 1C [0000:0070] -> Bossbot
+#/dev/con
+#	BP = 600 System Console
+#	600-6FF  Events
+#	700-8FF  State
+#	900-9FF	Stack
+#/dev/kbd
+#	; Keyboard Input
+#	INT 16 bios
+##/bot/com
+#	BP = A00; Monitor, Command Interpreter
+#	A00-AFF  Events
+#	B00-CFF  State
+##	D00-DFF	Stack
 ============
-	E00 - Circuits
 ==============================
 /dev/tim
 	Timecounter
